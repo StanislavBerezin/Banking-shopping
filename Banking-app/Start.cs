@@ -1,4 +1,6 @@
-﻿using System;
+﻿using banking_logic;
+using banking_logic.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,21 +14,25 @@ namespace Banking_app
 {
     public partial class Start : Form
     {
+        
+
         public Start()
         {
             InitializeComponent();
+            
         }
 
         private void startShopping_btn_Click(object sender, EventArgs e)
         {
             int deposit;
+            int name;
             bool isDepositValid = int.TryParse(deposit_value.Text, out deposit);
-            bool isUsernameValid = username_value.Text is String;
+            bool isUsernameValid = int.TryParse(username_value.Text, out name);
 
 
-            if (username_value.Text == "" || !isUsernameValid)
+            if (username_value.Text == "" || isUsernameValid)
             {
-                displayError(true, "You havent entered a username");
+                displayError(true, "Incorrect username");
             }
             else if (!isDepositValid) {
                 displayError(true, "enter valid deposit");
@@ -34,7 +40,25 @@ namespace Banking_app
             else
             {
                 displayError(false, "");
+
+                UserModel user = new UserModel() {
+                    userName = username_value.Text,
+                    regularAccount = new AccountModel
+                    {
+                        Balance = Convert.ToInt32(deposit_value.Text)
+                    }
+
+                };
+                
+
+                Shopping_screen form = new Shopping_screen(user);
+                this.Hide();
+                form.ShowDialog();
+                this.Close();
+                
             }
+
+
         }
 
         private void displayError(bool visible, string errorMsg)

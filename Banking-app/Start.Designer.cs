@@ -99,7 +99,7 @@
             this.error_lbl.AutoSize = true;
             this.error_lbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.error_lbl.ForeColor = System.Drawing.Color.Red;
-            this.error_lbl.Location = new System.Drawing.Point(181, 156);
+            this.error_lbl.Location = new System.Drawing.Point(115, 156);
             this.error_lbl.Name = "error_lbl";
             this.error_lbl.Size = new System.Drawing.Size(69, 21);
             this.error_lbl.TabIndex = 19;

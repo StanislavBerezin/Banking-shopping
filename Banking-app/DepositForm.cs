@@ -11,25 +11,20 @@ using System.Windows.Forms;
 
 namespace Banking_app
 {
-    public partial class Shopping_screen : Form
+    public partial class DepositForm : Form
     {
-
-
         private UserModel user;
-
-        public Shopping_screen(UserModel user)
+        public DepositForm(UserModel user)
         {
             this.user = user;
             InitializeComponent();
-            name_value.Text = user.userName;
-            balance_value.Text = Convert.ToString(user.regularAccount.Balance) + '$';
-
         }
 
-        private void deposit_btn_Click(object sender, EventArgs e)
+        private void continue_btn_Click(object sender, EventArgs e)
         {
-            DepositForm form = new DepositForm(user);
-            form.ShowDialog();
+            user.regularAccount.Balance = Convert.ToInt32(deposit_value.Text);
+            this.Close();
+
         }
     }
 }

@@ -9,7 +9,9 @@ namespace banking_logic
 {
     public class UserModel
     {
+        
         public string userName { get; set; }
         public AccountModel regularAccount { get; set; }
+
     }
 }

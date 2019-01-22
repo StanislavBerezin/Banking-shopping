@@ -169,6 +169,7 @@
             this.deposit_btn.TabIndex = 13;
             this.deposit_btn.Text = "Deposit";
             this.deposit_btn.UseVisualStyleBackColor = true;
+            this.deposit_btn.Click += new System.EventHandler(this.deposit_btn_Click);
             // 
             // logout_button
             // 
