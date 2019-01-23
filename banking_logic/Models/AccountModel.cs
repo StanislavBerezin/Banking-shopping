@@ -10,5 +10,8 @@ namespace banking_logic.Models
     {
         public int Balance { get; set; }
         public List<ItemModel> Purchases { get; set; }
+
+
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using banking_logic;
+using banking_logic.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace Banking_app
 
 
         private UserModel user;
+        private List<string> shops = new List<string> { "Tech","Coles" };
 
         public Shopping_screen(UserModel user)
         {
@@ -23,13 +25,24 @@ namespace Banking_app
             InitializeComponent();
             name_value.Text = user.userName;
             balance_value.Text = Convert.ToString(user.regularAccount.Balance) + '$';
+            populateDummyData();
 
+
+        }
+
+        private void populateDummyData()
+        {
+            shop_selection.DataSource = shops;
+            shop_items.DataSource = shop_items;
         }
 
         private void deposit_btn_Click(object sender, EventArgs e)
         {
             DepositForm form = new DepositForm(user);
+            this.Hide();
             form.ShowDialog();
+            this.Dispose();
+            this.Close();
         }
     }
 }

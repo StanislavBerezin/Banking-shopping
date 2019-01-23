@@ -52,10 +52,12 @@ namespace Banking_app
                 
 
                 Shopping_screen form = new Shopping_screen(user);
+                
+               
                 this.Hide();
                 form.ShowDialog();
                 this.Close();
-                
+                this.Dispose();
             }
 
 

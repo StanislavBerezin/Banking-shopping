@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace banking_logic.Models
 {
-    public class ItemModel
+    public class ShopModel
     {
-    
-        public int ItemPrice { get; set; }
-        public string ItemName { get; set; }
+        public string shopName { get; set; }
+        public List<ItemModel> sellingItems {get;set;}
     }
 }
